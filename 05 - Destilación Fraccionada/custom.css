@@ -1,0 +1,99 @@
+/*********************************************
+ * SLIDES
+ *********************************************/
+ 
+.reveal .slides {
+	margin-left: -100px;
+	margin-top: -20px;
+}
+
+
+
+/*********************************************
+ * CONTROLS
+ *********************************************/
+
+.reveal .controls {
+	display: none;
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	z-index: 30;
+
+	font-family: Times New Roman, Times, serif;
+
+	right: 0;
+	bottom: 0;
+}
+
+	.reveal .controls a {
+		font-size: 30px;
+		position: absolute;
+		opacity: 0.1;
+		color: #fff;
+	}
+		.reveal .controls a.enabled {
+			opacity: 0.6;
+			color: hsl(185, 85%, 70%);
+
+			text-shadow: 0px 0px 2px hsla(185, 45%, 70%, 0.3);
+		}
+		.reveal .controls a.enabled:active {
+			margin-top: 1px;
+		}
+
+	.reveal .controls .left {
+		top: 30px;
+	}
+
+	.reveal .controls .right {
+		left: 60px;
+		top: 30px;
+	}
+
+	.reveal .controls .up {
+		left: 30px;
+	}
+
+	.reveal .controls .down {
+		left: 30px;
+		top: 60px;
+
+	}
+
+    
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+	position: fixed;
+	display: none;
+	height: 3px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+
+	background: rgba(0,0,0,0.2);
+}
+
+	.reveal .progress span {
+		display: block;
+		background: hsl(185, 85%, 50%);
+		height: 100%;
+		width: 0px;
+
+		-webkit-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		   -moz-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		    -ms-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		     -o-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	}
+
+    
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: #42affa; }
