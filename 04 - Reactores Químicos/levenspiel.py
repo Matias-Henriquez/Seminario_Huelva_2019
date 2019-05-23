@@ -9,11 +9,10 @@ Kinetics['2º Orden'] = lambda x, k, cA0: 1/(k*cA0**2*(1-x)**2)
 Kinetics['Langmuir-Hinshelwood'] = lambda x, k, cA0: 1/(k*cA0*(1-x)/(0.5+1.2*k*cA0*(1-x))**2)
 
 
-def plot(kinetics='Langmuir-Hinshelwood', k=0.5, X1=0.4, X2=0.8, Reactor1='CSTR', Reactor2='CSTR'):
+def plot(kinetics='Langmuir-Hinshelwood', k=0.5, X1=0.4, X2=0.8, X3=0.9, Reactor1='CSTR', Reactor2='CSTR', Reactor3='CSTR'):
 
     x=np.linspace(0,0.99,100)
     fig, ax = plt.subplots()
-    #fig, ax = plt.figure(figsize=(7,5),dpi=100)
     r=Kinetics[kinetics](x,1.0,k)
     plt.plot(x,r)
     plt.xlabel("$X_A$")
@@ -50,7 +49,23 @@ def plot(kinetics='Langmuir-Hinshelwood', k=0.5, X1=0.4, X2=0.8, Reactor1='CSTR'
         poly = Polygon(verts, facecolor='c', edgecolor='c', alpha=0.5)
         ax.add_patch(poly)
         print("REACTOR2 PFR Volume=%.3g L"%V2)
+      
+    if (Reactor3=='CSTR'):
+        y3=Kinetics[kinetics](X3,1.0,k)
+        V3=(X3-X2)*y3
+        rect = Rectangle((X2, 0), X3-X2, y3, linewidth=1,edgecolor='r',facecolor='r', alpha=0.5)
+        ax.add_patch(rect)
+        print("REACTOR3 CSTR Volume=%.3g L"%V3)
+    else:
+        V3=integrate.quad(lambda x: Kinetics[kinetics](x,1.0,k), X2, X3)[0]
+        ix=np.linspace(X2,X3,100)
+        iy=Kinetics[kinetics](ix,1.0,k)
+        verts = [(X2, 0), *zip(ix, iy), (X3, 0)]
+        poly = Polygon(verts, facecolor='r', edgecolor='r', alpha=0.5)
+        ax.add_patch(poly)
+        print("REACTOR3 PFR Volume=%.3g L"%V3)
         
-    print("TOTAL Volume=%.3g L"%(V1+V2))
+        
+    print("TOTAL Volume=%.3g L"%(V1+V2+V3))
         
     plt.show()

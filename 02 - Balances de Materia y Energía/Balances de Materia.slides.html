@@ -13265,7 +13265,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Balance-en-una-unidad-de-mezcla---Diluci&#243;n-de-NaOH">Balance en una unidad de mezcla - Diluci&#243;n de NaOH<a class="anchor-link" href="#Balance-en-una-unidad-de-mezcla---Diluci&#243;n-de-NaOH">&#182;</a></h2><h3 id="Enunciado">Enunciado<a class="anchor-link" href="#Enunciado">&#182;</a></h3><p>Se desea preparar una disolución acuosa de NaOH (8% en masa) diluyendo una disolución al 20% en masa con agua pura. Calcular cuántos litros de $H_2O$ son necesarios y cuántos kg de disolución deseada son producidos por cada kg de la corriente de sosa de alimentación.</p>
+<h2 id="Balance-en-una-unidad-de-mezcla---Diluci&#243;n-de-NaOH">Balance en una unidad de mezcla - Diluci&#243;n de NaOH<a class="anchor-link" href="#Balance-en-una-unidad-de-mezcla---Diluci&#243;n-de-NaOH">&#182;</a></h2><h3 id="Enunciado">Enunciado<a class="anchor-link" href="#Enunciado">&#182;</a></h3><p>Se desea preparar una disolución acuosa de NaOH (8% en masa) diluyendo una disolución al 20% en masa con agua pura. Calcular cuántos litros de $\mathrm{H}_2\mathrm{O}$ son necesarios y cuántos kg de disolución deseada son producidos por cada kg de la corriente de sosa de alimentación.</p>
 <p><strong>Ejemplo 4.3-3 R.M. Felder, Elementary Principles of Chemical Processes, 3rd Edition</strong></p>
 
 </div>
@@ -13381,7 +13381,7 @@ $\displaystyle 20.0 - 0.08 m_{2} = 0$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">EqGlobal</span><span class="p">,</span> <span class="n">EqNaOH</span><span class="p">])</span>
@@ -13402,16 +13402,10 @@ $\displaystyle 20.0 - 0.08 m_{2} = 0$
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-7e5f41af3457&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>soln <span class="ansi-yellow-intense-fg ansi-bold">=</span> sym<span class="ansi-yellow-intense-fg ansi-bold">.</span>solve<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">[</span>EqGlobal<span class="ansi-yellow-intense-fg ansi-bold">,</span> EqNaOH<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">      2</span> <span class="ansi-green-intense-fg ansi-bold">for</span> k <span class="ansi-green-intense-fg ansi-bold">in</span> soln<span class="ansi-yellow-intense-fg ansi-bold">.</span>keys<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">      3</span>     print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;Variable {0:4s}:  {1:8.2f}&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span>str<span class="ansi-yellow-intense-fg ansi-bold">(</span>k<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>soln<span class="ansi-yellow-intense-fg ansi-bold">[</span>k<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;sym&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Variable m1  :    150.00
+Variable m2  :    250.00
+</pre>
 </div>
 </div>
 
@@ -13505,7 +13499,7 @@ La alimentación al reactor contiene 7.8% $\mathrm{CH_4}$, 19.4% $\mathrm{O_2}$ 
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stream1</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;nM1 nO1 nN1&#39;</span><span class="p">)</span>
@@ -13551,7 +13545,7 @@ $\displaystyle \left[ \left( nM_{1}, \  nO_{1}, \  nN_{1}\right), \  \left( nM_{
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">extents</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;XMON XD&#39;</span><span class="p">)</span>
@@ -13640,7 +13634,7 @@ $$ n_{M}^2 = n_{M}^1 - X_{MON} - X_D $$$$ n_O^2 = n_O^1 - \frac{3}{2} X_{MON} - 
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">reactor</span> <span class="o">=</span> <span class="p">[</span>
@@ -13755,7 +13749,7 @@ $\displaystyle - nN_{1} + nN_{2} = 0$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stream1_spec</span> <span class="o">=</span> <span class="p">[</span>
@@ -13859,7 +13853,7 @@ $\displaystyle nD_{2} - 8 nMON_{2} = 0$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***************************&quot;</span><span class="p">)</span>
@@ -13950,12 +13944,10 @@ Corriente 2
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">equations</span> <span class="o">=</span> <span class="n">reactor</span> <span class="o">+</span> <span class="n">specifications</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">%d</span><span class="s2"> Ecuaciones = </span><span class="si">%d</span><span class="s2"> Balances de Materia + </span><span class="si">%d</span><span class="s2"> Especificaciones&quot;</span> \
-    <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">equations</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">reactor</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">specifications</span><span class="p">)))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">%d</span><span class="s2"> Balances de Materia</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">reactor</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">mb</span> <span class="ow">in</span> <span class="n">reactor</span><span class="p">:</span>
@@ -13964,6 +13956,9 @@ Corriente 2
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">%d</span><span class="s2"> Especificaciones</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">specifications</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">specifications</span><span class="p">:</span>
     <span class="n">display</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">%d</span><span class="s2"> Ecuaciones = </span><span class="si">%d</span><span class="s2"> Balances de Materia + </span><span class="si">%d</span><span class="s2"> Especificaciones&quot;</span> \
+    <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">equations</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">reactor</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">specifications</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -13981,8 +13976,6 @@ Corriente 2
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-11 Ecuaciones = 6 Balances de Materia + 5 Especificaciones
-
 6 Balances de Materia
 
 </pre>
@@ -14146,6 +14139,18 @@ $\displaystyle nD_{2} - 8 nMON_{2} = 0$
 
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+11 Ecuaciones = 6 Balances de Materia + 5 Especificaciones
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14167,7 +14172,7 @@ $\displaystyle nD_{2} - 8 nMON_{2} = 0$
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">reactor</span> <span class="o">+</span> <span class="n">specifications</span><span class="p">)</span>
@@ -14219,7 +14224,7 @@ Variable nO2 :      5.75
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nTOTAL</span><span class="o">=</span><span class="n">soln</span><span class="p">[</span><span class="n">nM2</span><span class="p">]</span><span class="o">+</span><span class="n">soln</span><span class="p">[</span><span class="n">nO2</span><span class="p">]</span><span class="o">+</span><span class="n">soln</span><span class="p">[</span><span class="n">nN2</span><span class="p">]</span><span class="o">+</span><span class="n">soln</span><span class="p">[</span><span class="n">nMON2</span><span class="p">]</span><span class="o">+</span><span class="n">soln</span><span class="p">[</span><span class="n">nD2</span><span class="p">]</span><span class="o">+</span><span class="n">soln</span><span class="p">[</span><span class="n">nH2</span><span class="p">]</span>
@@ -14264,6 +14269,57 @@ Agua    13.99%
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Podemos <strong>estudiar gráficamente</strong> cómo varía la solución en función de alguno de los parámetros que definen el problema. Por ejemplo, podemos observar cómo varía el % de $\mathrm{O}_2$ en la salida en función de la conversión de metano en la entrada. Para ello, necesitamos declarar una función que tome el parámetro dicha conversión, modifique las especificaciones convenientemente y devuelva la composición deseada.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">func</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>    
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Conversión $CH_4$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Composición $O_2$ Salida&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Balance-en-varios-equipos-con-reacci&#243;n,-reciclado-y-purga---S&#237;ntesis-de-Metanol">Balance en varios equipos con reacci&#243;n, reciclado y purga - S&#237;ntesis de Metanol<a class="anchor-link" href="#Balance-en-varios-equipos-con-reacci&#243;n,-reciclado-y-purga---S&#237;ntesis-de-Metanol">&#182;</a></h2><h3 id="Enunciado">Enunciado<a class="anchor-link" href="#Enunciado">&#182;</a></h3><p>El metanol se produce mediante reacción de dióxido de carbono e hidrógeno:</p>
 $$ \mathrm{CO_2} + 3\mathrm{H_2} \to \mathrm{CH_3OH} + \mathrm{H_2O} $$<p>La alimentación fresca del proceso contiene hidrógeno, dióxido de carbono y 0.4% molar de inertes (I). El efluente del reactor entra en un condensador que elimina todo el metanol y el agua formados pero ninguno de los reactivos o inertes. Estos últimos se recirculan al reactor. Para evitar la acumulación de inertes en el sistema, se elimina una corriente de purga de la corriente de reciclado.</p>
 <p>La corriente que entra en el reactor (suma de las corrientes de alimentación fresca y la de reciclo) contiene 28% $\mathrm{CO_2}$, 70% $\mathrm{H_2}$ y 2% de inertes (composición molar). La conversión de hidrógeno en cada pasada por el reactor es del 60%. Calcular:</p>
@@ -14293,7 +14349,7 @@ $$ \mathrm{CO_2} + 3\mathrm{H_2} \to \mathrm{CH_3OH} + \mathrm{H_2O} $$<p>La ali
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stream1</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;nD1 nH1 nI1&#39;</span><span class="p">)</span>
@@ -14414,7 +14470,7 @@ $\displaystyle \left[ \alpha\right]$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mix</span> <span class="o">=</span> <span class="p">[</span>
@@ -14728,7 +14784,7 @@ $\displaystyle nI_{5} \left(1 - \alpha\right) - nI_{7} = 0$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stream1_spec</span> <span class="o">=</span> <span class="p">[</span>
@@ -14746,7 +14802,7 @@ $\displaystyle nI_{5} \left(1 - \alpha\right) - nI_{7} = 0$
 <span class="c1">#    sym.Eq(nI6-nI1)</span>
 <span class="c1">#]</span>
 
-<span class="n">specifications</span> <span class="o">=</span> <span class="n">stream1_spec</span> <span class="o">+</span> <span class="n">stream2_spec</span> <span class="o">+</span> <span class="n">reactor_spec</span> <span class="o">+</span> <span class="n">purge_spec</span>
+<span class="n">specifications</span> <span class="o">=</span> <span class="n">stream1_spec</span> <span class="o">+</span> <span class="n">stream2_spec</span> <span class="o">+</span> <span class="n">reactor_spec</span> <span class="c1">#+ purge_spec</span>
 <span class="k">for</span> <span class="n">eqn</span> <span class="ow">in</span> <span class="n">specifications</span><span class="p">:</span>
     <span class="n">display</span><span class="p">(</span><span class="n">eqn</span><span class="p">)</span>
 </pre></div>
@@ -14837,7 +14893,7 @@ $\displaystyle -0.6 + \frac{nH_{2} - nH_{3}}{nH_{2}} = 0$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***************************&quot;</span><span class="p">)</span>
@@ -14971,7 +15027,7 @@ Corriente 7
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*************************&quot;</span><span class="p">)</span>
@@ -15073,7 +15129,17 @@ Eq(-0.6 + (nH2 - nH3)/nH2, 0)
 </div>
 </div>
 
-</div></section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Si el número de variables se corresponde al número de ecuaciones, entonces el sistema tiene 0 grados de libertad (<strong>el problema está bien especificado</strong>).</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15083,7 +15149,7 @@ Eq(-0.6 + (nH2 - nH3)/nH2, 0)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">equations</span> <span class="o">+</span> <span class="n">specifications</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -15093,47 +15159,6 @@ Eq(-0.6 + (nH2 - nH3)/nH2, 0)
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Variable X   :  14.0000000000000
-Variable alpha:  0.122807017543860
-Variable nA3 :  14.0000000000000
-Variable nA4 :  14.0000000000000
-Variable nD1 :  15.7192982456140
-Variable nD2 :  28.0000000000000
-Variable nD3 :  14.0000000000000
-Variable nD5 :  14.0000000000000
-Variable nD6 :  1.71929824561404
-Variable nD7 :  12.2807017543860
-Variable nH1 :  45.4385964912281
-Variable nH2 :  70.0000000000000
-Variable nH3 :  28.0000000000000
-Variable nH5 :  28.0000000000000
-Variable nH6 :  3.43859649122807
-Variable nH7 :  24.5614035087719
-Variable nI1 :  0.245614035087719
-Variable nI2 :  2.00000000000000
-Variable nI3 :  2.00000000000000
-Variable nI5 :  2.00000000000000
-Variable nI6 :  0.245614035087719
-Variable nI7 :  1.75438596491228
-Variable nM3 :  14.0000000000000
-Variable nM4 :  14.0000000000000
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -15147,7 +15172,7 @@ Variable nM4 :  14.0000000000000
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">factor</span><span class="o">=</span><span class="mi">155</span><span class="o">/</span><span class="n">soln</span><span class="p">[</span><span class="n">nM4</span><span class="p">]</span>
@@ -15177,35 +15202,18 @@ Variable nM4 :  14.0000000000000
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>* Alimentación Fresca
-Caudal molar 679.82
-Composición:    25.60 % CO2 -    74.00 % H2 -     0.40 % I
-* Alimentación del Reactor
-Caudal molar 1107.14
-Composición:    28.00 % CO2 -    70.00 % H2 -     2.00 % I
-* Corriente de Recirculación
-Caudal molar 427.32
-Composición:    31.82 % CO2 -    63.64 % H2 -     4.55 % I
-* Corriente de Purga
-Caudal molar 59.82
-Composición:    31.82 % CO2 -    63.64 % H2 -     4.55 % I
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bibliograf&#237;a---Otros-recursos">Bibliograf&#237;a - Otros recursos<a class="anchor-link" href="#Bibliograf&#237;a---Otros-recursos">&#182;</a></h2><ul>
+<li>R.M. Felder, <em>Elementary Principles of Chemical Processes</em>, 3rd Edition, John Wiley &amp; Sons, 2004.</li>
+<li>J. Kantor, <em><a href="https://github.com/jckantor/CBE20255">Introduction to Chemical Engineering Analysis</a></em>, curso CBE 20255, Universidad de Notre Dame, Indiana, EE.UU.</li>
+<li>N. de Nevers, <em>Physical And Chemical Equilibrium For Chemical Engineers</em>, John Wiley &amp; Sons, 2002. <a href="https://github.com/FOSSEE/Python-Textbook-Companions/tree/master/Physical_And_Chemical_Equilibrium_For_Chemical_Engineers_by_N._de_Nevers">Repositorio de códigos</a></li>
+</ul>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

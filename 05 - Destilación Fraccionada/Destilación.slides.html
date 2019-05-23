@@ -13273,7 +13273,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13301,7 +13301,7 @@ $$ \log_{10} P=A-\frac{B}{C+T} $$</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a dictionary with the Antoine Equation for each of the components</span>
@@ -13325,265 +13325,39 @@ $$ \log_{10} P=A-\frac{B}{C+T} $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A continuación, inspeccionamos cómo varía la presión de vapor para dos de las sustancias escogidas con respecto a la temperatura:</p>
+<p><img src="img/Vpressure.png"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">):</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">350</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>    
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">FluidA</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">FluidB</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;T $\circ$C&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$P^0$ [mmHg]&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="1963ce08-62bf-4088-a747-5d11de9683e8"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#1963ce08-62bf-4088-a747-5d11de9683e8');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ba137ce080084480b3de42132a6a5e38", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A partir de la <strong>presión de vapor</strong>, se puede determinar la <strong>temperatura de ebullición</strong> de un fluido puro como aquella temperatura $T$ a la que su presión de vapor del fluido se hace igual a la presión exterior. Podemos buscar dicha solución mediante la función <strong>fsolve</strong>. Podemos comprobar la precisión de la ecuación de Antoine para el agua:</p>
+<p><img src="img/PtoEb.png"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tsat</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="n">Tsat</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">P</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">:</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">Psat</span><span class="p">[</span><span class="n">s</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">P</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seleccione un fluido y especifique una presión en atmósferas:&quot;</span><span class="p">)</span>
-    
-<span class="nd">@interact</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">Tsat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">P</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">5.0</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">getTeb</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto de ebullición del </span><span class="si">%s</span><span class="s2"> : </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Tsat</span><span class="p">[</span><span class="n">f</span><span class="p">](</span><span class="n">P</span><span class="o">*</span><span class="mi">760</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Seleccione un fluido y especifique una presión en atmósferas:
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="48901a6b-09c2-4c5f-a395-27338b8bc6ce"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#48901a6b-09c2-4c5f-a395-27338b8bc6ce');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "da5c67ed43c84fd283cb8771ade9f7c0", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>También podemos comparar, de forma gráfica, las temperaturas de ebullición de dos fluidos diferentes en función de la Presión exterior (en atmósferas):</p>
+<p><img src="img/Teb.png"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">):</span>
-    <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">TA</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">TB</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">P</span><span class="p">)):</span>
-        <span class="n">TA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">TB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>    
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">760</span><span class="p">,</span><span class="n">TA</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">FluidA</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">760</span><span class="p">,</span><span class="n">TB</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">FluidB</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$P_</span><span class="si">{ext}</span><span class="s1">$ [atm]&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;T [$\circ$C]&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="36ff5aea-7646-4546-853e-8245c2dc9d4f"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#36ff5aea-7646-4546-853e-8245c2dc9d4f');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "0270fbf0815f47a58d16500153726658", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Mezclas-binarias-ideales:-Ley-de-Raoult-y-diagrama-P-x">Mezclas binarias ideales: Ley de Raoult y diagrama P-x<a class="anchor-link" href="#Mezclas-binarias-ideales:-Ley-de-Raoult-y-diagrama-P-x">&#182;</a></h2><p>La <strong>ley de Raoult</strong> supone que, en una <strong>mezcla ideal</strong> de dos líquidos, la presión de vapor de cada uno de los componentes de la mezcla es <strong>proporcional</strong> a su <strong>fracción molar</strong> dentro de la disolución:</p>
 $$P_i = P_i^0 x_i$$<p>Utilizando esta definición, podemos representar la presión de vapor de una mezcla binaria de dos sustancias A y B.</p>
 <p><strong>NOTA</strong>: En realidad, las mezclas no suelen ser ideales y suelen presentar desviaciones con respecto a la ley de Raoult.</p>
+<p><img src="img/Raoult.png"></p>
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mf">298.15</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>    
-    <span class="n">PA</span><span class="o">=</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">PB</span><span class="o">=</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">PA</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$P^0_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">PB</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$P^0_{&quot;</span><span class="o">+</span><span class="n">FluidB</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">PB</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">PA</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$P^0_</span><span class="si">{TOTAL}</span><span class="s2">$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$P$ [mmHg]&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">PA</span><span class="p">,</span><span class="n">PB</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="ad651870-8bf5-460b-9cd7-8a8cdba7c9b1"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#ad651870-8bf5-460b-9cd7-8a8cdba7c9b1');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "820648226a7445efa5eeaf76b9166257", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13603,70 +13377,11 @@ $$ y_A = \frac{x_A P_A^0(T)}{P_{ext}}$$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Primero, vamos a explorar qué forma tienen los diagramas <strong>T-x</strong> (temperatura-composición) para mezclas ideales de fluidos, en función de la presión exterior $P$ y de la composición de la mezcla.</p>
+<p><img src="img/TebMezcla.png"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">Pext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">5.0</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span><span class="n">Pext</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">Pext</span><span class="o">*</span><span class="mi">760</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">P</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">),</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span><span class="n">T</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span><span class="n">T</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura $^\circ$C&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama Txy para </span><span class="si">{:s}</span><span class="s1">/</span><span class="si">{:s}</span><span class="s1"> a P = </span><span class="si">{:.0f}</span><span class="s1"> atm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FluidA</span><span class="p">,</span><span class="n">FluidB</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">Tmid</span><span class="o">=</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">)</span><span class="o">+</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">Tmid</span><span class="p">),</span><span class="n">Tmid</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">Tmid</span><span class="p">),</span><span class="n">Tmid</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="6051c0a3-71bf-43ea-aba3-2760e8926b1e"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#6051c0a3-71bf-43ea-aba3-2760e8926b1e');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2ad2e0d32b7f46e08f283a47d35a9047", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13676,92 +13391,11 @@ var element = $('#6051c0a3-71bf-43ea-aba3-2760e8926b1e');
 <li>La composición $x_F$ y caudal $F$ de la mezcla que se alimenta al destilador.</li>
 <li>La Temperatura $T$ y presión $P$ dentro del destilador.</li>
 </ul>
+<p><img src="img/AguaFenol.png"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">Pext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">5.0</span><span class="p">),</span><span class="n">xF</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">),</span><span class="n">TF</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">300.0</span><span class="p">),</span><span class="n">F</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span><span class="n">Pext</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">xF</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">TF</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span><span class="n">F</span><span class="o">=</span><span class="mf">100.0</span><span class="p">):</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">Pext</span><span class="o">*</span><span class="mi">760</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">P</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">),</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span><span class="n">T</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span><span class="n">T</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura $^\circ$C&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama Txy para </span><span class="si">{:s}</span><span class="s1">/</span><span class="si">{:s}</span><span class="s1"> a P = </span><span class="si">{:.1f}</span><span class="s1"> atm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FluidA</span><span class="p">,</span><span class="n">FluidB</span><span class="p">,</span><span class="n">Pext</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">Tdew</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">xF</span><span class="p">,</span> <span class="mi">138</span><span class="p">)</span>
-    <span class="n">Tbub</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">xF</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="n">TF</span><span class="p">,</span><span class="s1">&#39;kx&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">xF</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">TF</span><span class="p">,</span><span class="n">TF</span><span class="p">],</span><span class="s1">&#39;b--&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;$x_F$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="n">TF</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;$T_F$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="n">Tdew</span><span class="p">,</span><span class="s1">&#39;kD&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="n">Tbub</span><span class="p">,</span><span class="s1">&#39;kD&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="n">TF</span><span class="o">&gt;=</span><span class="n">Tbub</span> <span class="ow">and</span> <span class="n">TF</span><span class="o">&lt;=</span><span class="n">Tdew</span><span class="p">):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">TF</span><span class="p">,</span><span class="s1">&#39;go&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">)],[</span><span class="n">TF</span><span class="p">,</span><span class="n">TF</span><span class="p">,</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span><span class="s1">&#39;g--&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;$y=$</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">)),</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">TF</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">)],[</span><span class="n">TF</span><span class="p">,</span><span class="n">TF</span><span class="p">,</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">),</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;$x=$</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">)),</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    
-    <span class="n">L</span><span class="o">=</span><span class="n">F</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">)</span><span class="o">-</span><span class="n">xF</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">TF</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="n">TF</span><span class="p">))</span>
-    <span class="n">V</span><span class="o">=</span><span class="n">F</span><span class="o">-</span><span class="n">L</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L = </span><span class="si">%.3f</span><span class="s2"> - V = </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">V</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tburbuja  </span><span class="si">{:.1f}</span><span class="s2"> °C - Trocio </span><span class="si">{:.1f}</span><span class="s2"> °C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tbub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Tdew</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="888c0312-840e-42e9-9509-3d67997aa10f"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#888c0312-840e-42e9-9509-3d67997aa10f');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "6930da3e93f944e58ebbe4050987c1d6", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13769,69 +13403,10 @@ var element = $('#888c0312-840e-42e9-9509-3d67997aa10f');
 <h2 id="Diagramas-y-x:-Destilaci&#243;n-Fraccionada---Metodo-de-McCabe-Thiele">Diagramas y-x: Destilaci&#243;n Fraccionada - Metodo de McCabe-Thiele<a class="anchor-link" href="#Diagramas-y-x:-Destilaci&#243;n-Fraccionada---Metodo-de-McCabe-Thiele">&#182;</a></h2><p>Mediante destilación Flash, no es posible la separación completa de los componentes de una mezcla ideal. Para ello, es necesario hacer uso de la destilación fraccionada.</p>
 <p>En este tipo de operación, es más práctico trabajar con el diagrama <strong>y-x</strong> (composición del vapor frente a composición del líquido, con respecto al componente más volátil).</p>
 <p>Podemos explorar qué pinta tienen estos diagramas <strong>y-x</strong> para pares de fluidos de nuestra biblioteca (seleccionar el fluido <strong>más volátil</strong> como el <strong>FluidoA</strong>), en función de la presión a la que trabaja la columna.</p>
+<p><img src="img/EtanolFenol.png" width="300"></p>
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">Pext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">5.0</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span><span class="n">Pext</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">Pext</span><span class="o">*</span><span class="mi">760</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">P</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">),</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],[</span><span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama x-y para </span><span class="si">{:s}</span><span class="s1">/</span><span class="si">{:s}</span><span class="s1"> a P = </span><span class="si">{:.1f}</span><span class="s1"> atm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FluidA</span><span class="p">,</span><span class="n">FluidB</span><span class="p">,</span><span class="n">Pext</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="a8853005-83dd-4132-8c10-546b41ab64d8"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#a8853005-83dd-4132-8c10-546b41ab64d8');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "39a39b5dd50646c6b8fc7b24892713e1", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13860,7 +13435,7 @@ El método de McCabe y Thiele es un método gráfico que permite diseñar y dime
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Hvap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -13910,196 +13485,11 @@ El método de McCabe y Thiele es un método gráfico que permite diseñar y dime
 <li>Temperatura a la que entra la alimentacion ($T_F$).</li>
 <li>Presión a la que trabaja la columna ($P$).</li>
 </ul>
+<p><img src="img/McCabe.png" width="400"></p>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">FluidA</span><span class="o">=</span><span class="s1">&#39;Acetona&#39;</span><span class="p">,</span> <span class="n">FluidB</span><span class="o">=</span><span class="s1">&#39;Agua&#39;</span><span class="p">,</span><span class="n">Pext</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">TF</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span><span class="n">xF</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">xB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">xD</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">Rext</span><span class="o">=</span><span class="mf">3.0</span><span class="p">):</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">Pext</span><span class="o">*</span><span class="mi">760</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">T</span><span class="p">))</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">Psat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">P</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidA</span><span class="p">](</span><span class="n">P</span><span class="p">),</span><span class="n">Tsat</span><span class="p">[</span><span class="n">FluidB</span><span class="p">](</span><span class="n">P</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">xT</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">yT</span><span class="o">=</span><span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">p</span><span class="o">=</span><span class="n">xT</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
-    <span class="n">xT</span><span class="o">=</span><span class="n">xT</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
-    <span class="n">yT</span><span class="o">=</span><span class="n">yT</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xT</span><span class="p">,</span><span class="n">yT</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-
-    <span class="c1"># RECTA Q</span>
-    <span class="n">Tdew</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">xF</span><span class="p">,</span> <span class="mi">138</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Tbub</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">xF</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    
-    <span class="n">Hvapmix</span><span class="o">=</span><span class="n">xF</span><span class="o">*</span><span class="n">Hvap</span><span class="p">[</span><span class="n">FluidA</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xF</span><span class="p">)</span><span class="o">*</span><span class="n">Hvap</span><span class="p">[</span><span class="n">FluidB</span><span class="p">]</span>
-    <span class="n">cPVapmix</span><span class="o">=</span><span class="n">xF</span><span class="o">*</span><span class="n">cPVap</span><span class="p">[</span><span class="n">FluidA</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xF</span><span class="p">)</span><span class="o">*</span><span class="n">cPVap</span><span class="p">[</span><span class="n">FluidB</span><span class="p">]</span>
-    <span class="n">cPLiqmix</span><span class="o">=</span><span class="n">xF</span><span class="o">*</span><span class="n">cPLiq</span><span class="p">[</span><span class="n">FluidA</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xF</span><span class="p">)</span><span class="o">*</span><span class="n">cPLiq</span><span class="p">[</span><span class="n">FluidB</span><span class="p">]</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="n">TF</span><span class="o">&gt;</span><span class="n">Tdew</span><span class="p">):</span>
-        <span class="n">q</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">TF</span><span class="o">-</span><span class="n">Tdew</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">cPVapmix</span><span class="p">)</span><span class="o">/</span><span class="n">Hvapmix</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">TF</span><span class="o">&gt;</span><span class="n">Tbub</span><span class="p">):</span>
-        <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">Tdew</span><span class="o">-</span><span class="n">TF</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Tdew</span><span class="o">-</span><span class="n">Tbub</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">Hvapmix</span><span class="o">+</span><span class="p">(</span><span class="n">Tbub</span><span class="o">-</span><span class="n">TF</span><span class="p">)</span><span class="o">*</span><span class="n">cPLiqmix</span><span class="p">)</span><span class="o">/</span><span class="n">Hvapmix</span>
-    
-    <span class="n">yq</span><span class="o">=-</span><span class="n">xT</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">+</span><span class="n">xF</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">q</span><span class="p">)</span>
-
-    <span class="c1">#Intersection occurs between points itemindex and itemindex+1</span>
-    <span class="n">itemindex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">yq</span> <span class="o">-</span> <span class="n">yT</span><span class="p">)))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xT</span><span class="p">[</span><span class="n">itemindex</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">yq</span><span class="p">[</span><span class="n">itemindex</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
-    <span class="n">a2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xT</span><span class="p">[</span><span class="n">itemindex</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">yq</span><span class="p">[</span><span class="n">itemindex</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
-    <span class="n">b1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xT</span><span class="p">[</span><span class="n">itemindex</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">yT</span><span class="p">[</span><span class="n">itemindex</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
-    <span class="n">b2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xT</span><span class="p">[</span><span class="n">itemindex</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">yT</span><span class="p">[</span><span class="n">itemindex</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
-    <span class="n">da</span> <span class="o">=</span> <span class="n">a2</span><span class="o">-</span><span class="n">a1</span>
-    <span class="n">db</span> <span class="o">=</span> <span class="n">b2</span><span class="o">-</span><span class="n">b1</span>
-    <span class="n">dp</span> <span class="o">=</span> <span class="n">a1</span><span class="o">-</span><span class="n">b1</span>
-    <span class="n">dap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
-    <span class="n">dap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">da</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">dap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">dap</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">dap</span><span class="p">,</span> <span class="n">dp</span> <span class="p">)</span>
-    <span class="n">intersec</span><span class="o">=</span><span class="p">(</span><span class="n">num</span> <span class="o">/</span> <span class="n">denom</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">*</span><span class="n">db</span> <span class="o">+</span> <span class="n">b1</span>    
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">intersec</span><span class="p">[</span><span class="mi">0</span><span class="p">]],[</span><span class="n">xF</span><span class="p">,</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intersec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;ko&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="c1"># RECTA DE OPERACION DE ALIMENTACION (REFLUJO MINIMO)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xD</span><span class="p">,</span> <span class="n">intersec</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">xD</span><span class="p">,</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;c--&#39;</span><span class="p">)</span>
-    <span class="n">Rextmin</span><span class="o">=</span><span class="p">(</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">xD</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">intersec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="n">Rext</span><span class="o">&lt;</span><span class="n">Rextmin</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reflujo menor que el mínimo permitido (</span><span class="si">%.2f</span><span class="s1">)&#39;</span><span class="o">%</span><span class="k">Rextmin</span>)
-        <span class="k">return</span>
-    
-    <span class="c1"># RECTA DE OPERACION DE ALIMENTACION</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xD</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">xD</span><span class="p">,</span><span class="n">xD</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">Rext</span><span class="p">)],</span><span class="s1">&#39;c-&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># INTERSECCION RECTA DE OPERACION - RECTA DE ALIMENTACION</span>
-    <span class="n">a1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">xF</span><span class="p">])</span>
-    <span class="n">a2</span><span class="o">=</span><span class="n">intersec</span>
-    <span class="n">b1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xD</span><span class="p">,</span><span class="n">xD</span><span class="p">])</span>
-    <span class="n">b2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">xD</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">Rext</span><span class="p">)])</span>
-    <span class="n">da</span> <span class="o">=</span> <span class="n">a2</span><span class="o">-</span><span class="n">a1</span>
-    <span class="n">db</span> <span class="o">=</span> <span class="n">b2</span><span class="o">-</span><span class="n">b1</span>
-    <span class="n">dp</span> <span class="o">=</span> <span class="n">a1</span><span class="o">-</span><span class="n">b1</span>
-    <span class="n">dap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
-    <span class="n">dap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">da</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">dap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">dap</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">dap</span><span class="p">,</span> <span class="n">dp</span> <span class="p">)</span>
-    <span class="n">intersec2</span><span class="o">=</span><span class="p">(</span><span class="n">num</span> <span class="o">/</span> <span class="n">denom</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">*</span><span class="n">db</span> <span class="o">+</span> <span class="n">b1</span>    
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;mo&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    
-    <span class="c1"># RECTA DE OPERACION - ZONA DE AGOTAMIENTO</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xB</span><span class="p">,</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],[</span><span class="n">xB</span><span class="p">,</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
-    <span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">xB</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">intersec2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">xB</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama x-y para </span><span class="si">{:s}</span><span class="s1">/</span><span class="si">{:s}</span><span class="s1"> a P = </span><span class="si">{:.1f}</span><span class="s1"> atm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FluidA</span><span class="p">,</span><span class="n">FluidB</span><span class="p">,</span><span class="n">Pext</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y_{&quot;</span><span class="o">+</span><span class="n">FluidA</span><span class="o">+</span><span class="s2">&quot;}$&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="n">xF</span><span class="p">,</span><span class="s1">&#39;go&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xD</span><span class="p">,</span><span class="n">xD</span><span class="p">,</span><span class="s1">&#39;bo&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xB</span><span class="p">,</span><span class="n">xB</span><span class="p">,</span><span class="s1">&#39;yo&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="c1"># START McCabe-Thiele</span>
-    <span class="n">xP</span> <span class="o">=</span> <span class="n">xD</span>
-    <span class="n">yP</span> <span class="o">=</span> <span class="n">xD</span>
-    <span class="n">nTray</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">while</span> <span class="n">xP</span> <span class="o">&gt;</span> <span class="n">xB</span><span class="p">:</span>
-        <span class="n">nTray</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">Tdew</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span><span class="n">y</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="n">yP</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-        <span class="n">xQ</span> <span class="o">=</span> <span class="n">xP</span>
-        <span class="n">xP</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">Tdew</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xQ</span><span class="p">,</span><span class="n">xP</span><span class="p">],[</span><span class="n">yP</span><span class="p">,</span><span class="n">yP</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-        <span class="c1">#plt.plot(xP,yP,&#39;ro&#39;,ms=5)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xP</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="n">yP</span><span class="p">,</span><span class="n">nTray</span><span class="p">)</span>
-
-        <span class="n">yQ</span> <span class="o">=</span> <span class="n">yP</span>
-        <span class="n">yP</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">xD</span> <span class="o">-</span> <span class="p">(</span><span class="n">Rext</span><span class="o">/</span><span class="p">(</span><span class="n">Rext</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">xD</span><span class="o">-</span><span class="n">xP</span><span class="p">),</span><span class="n">xB</span> <span class="o">+</span> <span class="n">S</span><span class="o">*</span><span class="p">(</span><span class="n">xP</span><span class="o">-</span><span class="n">xB</span><span class="p">)])</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xP</span><span class="p">,</span><span class="n">xP</span><span class="p">],[</span><span class="n">yQ</span><span class="p">,</span><span class="n">yP</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-        
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xB</span><span class="p">,</span><span class="n">xB</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">xB</span><span class="p">],</span><span class="s1">&#39;b--&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xF</span><span class="p">,</span><span class="n">xF</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">xF</span><span class="p">],</span><span class="s1">&#39;b--&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xD</span><span class="p">,</span><span class="n">xD</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">xD</span><span class="p">],</span><span class="s1">&#39;b--&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xB</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="s1">&#39;$x_B$ = </span><span class="si">{:0.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">xB</span><span class="p">)),</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xF</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="s1">&#39;$x_F$ = </span><span class="si">{:0.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">xF</span><span class="p">)),</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xD</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="s1">&#39;$x_D$ = </span><span class="si">{:0.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">xD</span><span class="p">)),</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.95</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1"> etapas eq.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nTray</span><span class="p">)),</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-
-    
-<span class="n">widget</span><span class="o">=</span><span class="n">interactive</span><span class="p">(</span><span class="n">check</span><span class="p">,</span><span class="n">FluidA</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">FluidB</span><span class="o">=</span><span class="n">Psat</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
-          <span class="n">Pext</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span> 
-          <span class="n">TF</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> 
-          <span class="n">xF</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span> 
-          <span class="n">xB</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mf">0.49</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span> 
-          <span class="n">xD</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.51</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span> 
-          <span class="n">Rext</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
-<span class="n">controls</span> <span class="o">=</span> <span class="n">HBox</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">children</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">flex_flow</span><span class="o">=</span><span class="s1">&#39;row wrap&#39;</span><span class="p">))</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span><span class="n">controls</span><span class="p">,</span> <span class="n">output</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="d779b35d-48ea-4ea5-b141-5aa3ba394115"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#d779b35d-48ea-4ea5-b141-5aa3ba394115');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "c78030dd56684a0e80ec08c96c848b89", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 
